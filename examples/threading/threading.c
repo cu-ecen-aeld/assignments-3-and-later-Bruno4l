@@ -10,13 +10,6 @@
 // #define DEBUG_LOG(msg, ...) printf("threading: " msg "\n", ##__VA_ARGS__)
 #define ERROR_LOG(msg, ...) printf("threading ERROR: " msg "\n", ##__VA_ARGS__)
 
-// Define the thread_data structure as suggested by the TODO
-struct thread_data {
-    pthread_mutex_t *mutex;
-    int wait_to_obtain_ms;
-    int wait_to_release_ms;
-};
-
 // Thread function
 void* threadfunc(void* thread_param) {
     struct thread_data* thread_func_args = (struct thread_data*) thread_param;
